@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>sign-up</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{width:100%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+
+        .heading{margin:10% 0% 3%;}
+
+        .softtax{
+            display:flex; 
+            color:#103a89; 
+            font-size:40px;
+            padding-left:5px;
+            line-height:0.8;
+            
+        }
+        .softtax i{font-size:50px;}        
+        .heading p{
+            padding:5px 0px 5px 10px;
+            color:#fff;
+            background-color:#008000;
+            width:65%;
+            border-radius:0px 100px 0px 0px;
+        }
+
+        form{
+            display: block;
+            margin:0 auto;
+            width:100%;
+        }
+
+        .input_container .input_icon{
+            position:relative;
+            top:37px;
+            left:50px;
+            color:#999;
+            font-size:20px;
+        }
+
+        .input_container input{
+            display:block;
+            width:80%;
+            height:50px;
+            margin:auto;
+            border:1px solid #999;
+            border-radius:5px;
+            outline:none;
+            font-size:16px;
+            text-indent:15px;
+            padding:20px 40px;
+            color:#666;
+            letter-spacing:1px;
+            box-sizing:border-box;
+            background-color:transparent;
+        }
+        .register a{text-decoration:none;}
+
+        .register button{
+            display:block;
+            margin:7% auto 2%;
+            height:50px;
+            width:80%;
+            border:none;
+            border-radius:2px;
+            outline:none;  
+            cursor:pointer;
+            font-size:16px;
+            background-color:#006600;
+            color:#fff;
+            box-shadow: 0px 3px 5px rgba(0,0,0,.2);
+        }
+
+        .register button:hover{
+            background:#333; 
+            color:#fff;
+        }
+
+        .footer{
+            text-align:center;
+            font-size:16px;
+        }
+
+        .footer p{color:#666;}
+
+        .footer a{color:#1858cd;}
+        
+    </style>
+    </head>
+    <body>
+    <section>
+        <div class="heading">
+            <span class="softtax"><i>Soft</i><h1>Tax</h1></span> 
+            <p><i>the smart way to manage your tax</i></p>
+        </div>
+            <form class="form">
+            <div class="input_container">
+                <span class="input_icon material-icons">person</span>
+                <input type="text" name="name" placeholder="FirstName">
+            </div>
+
+            <div class="input_container">
+                <span class="input_icon material-icons">person</span>
+                <input type="text" name="name" placeholder="LastName">
+            </div>
+
+            <div class="input_container">
+                <span class="input_icon material-icons">email</span>
+                <input type="text" name="email" placeholder="Email Address">
+            </div>
+
+            <div class="input_container">
+                <span class="input_icon material-icons">lock</span>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+
+            <div class="input_container">
+                <span class="input_icon material-icons">lock</span>
+                <input type="password" name="password" placeholder="Confirm password">
+            </div>
+            
+            <div class="register">
+                <a href=""><button>REGISTER</button></a>
+            </div>
+
+            <div class="footer">
+                <p>Already have an account? <a href="Login.html">Log in</a></p>
+            </div>     
+            
+        </form>
+    </section>
+</body>
+</html>
