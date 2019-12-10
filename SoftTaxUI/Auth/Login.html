@@ -8,38 +8,34 @@
     <title>sign-up</title>
     <style>
         *{margin:0;padding:0;}
-        body{width:100%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
 
-        .heading{margin:10% 0% 5%;}
-
-        .softtax{
-            display:flex; 
-            color:#103a89; 
-            font-size:40px;
-            padding-left:5px;
-            line-height:0.8;
-            
+        body{
+            width:100%; 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("SoftTax-Background.png");
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position: center;
         }
-        .softtax i{font-size:50px;}        
-        .heading p{
-            padding:5px 0px 5px 8px;
-            color:#fff;
-            background-color:#008000;
-            width:65%;
-            border-radius:0px 100px 0px 0px;
+
+        img{
+            display:block;
+            margin:20% auto 0%;
+            width:50%;
         }
 
         form{
             display: block;
             margin:0 auto;
             width:100%;
+            min-height:100vh;
         }
 
         .input_container .input_icon{
             position:relative;
             top:37px;
             left:50px;
-            color:#999;
+            color:#f2f2f2;
             font-size:20px;
         }
 
@@ -48,13 +44,13 @@
             width:80%;
             height:50px;
             margin:auto;
-            border:1px solid #999;
+            border:1px solid #f2f2f2;
             border-radius:5px;
             outline:none;
-            font-size:16px;
+            font-size:17px;
             text-indent:15px;
             padding:20px 40px;
-            color:#666;
+            color:#f2f2f2;
             letter-spacing:1px;
             box-sizing:border-box;
             background-color:transparent;
@@ -71,7 +67,7 @@
             outline:none;  
             cursor:pointer;
             font-size:16px;
-            background-color:#006600;
+            background-color:#e6c300;
             color:#fff;
             box-shadow: 0px 3px 5px rgba(0,0,0,.2);
         }
@@ -80,24 +76,12 @@
             background:#333; 
             color:#fff;
         }
-
-        .footer{
-            text-align:center;
-            font-size:16px;
-        }
-
-        .footer p{color:#666;}
-
-        .footer a{color:#1858cd;}
         
     </style>
     </head>
     <body>
     <section>
-        <div class="heading">
-            <span class="softtax"><i>Soft</i><h1>Tax</h1></span> 
-            <p><i>the smart way to manage your tax</i></p>
-        </div>
+            <img src="SoftTax-Logo.png" alt="">
             <form class="form">
             <div class="input_container">
                 <span class="input_icon material-icons">person</span>

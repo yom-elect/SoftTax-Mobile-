@@ -8,70 +8,110 @@
     <title>sign-up</title>
     <style>
         *{margin:0;padding:0;}
-        body{width:100%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
-
-        .heading{margin:10% 0% 3%;}
-
-        .softtax{
-            display:flex; 
-            color:#103a89; 
-            font-size:40px;
-            padding-left:5px;
-            line-height:0.8;
-            
-        }
-        .softtax i{font-size:50px;}        
-        .heading p{
-            padding:5px 0px 5px 10px;
-            color:#fff;
-            background-color:#008000;
-            width:65%;
-            border-radius:0px 100px 0px 0px;
+        body{
+            width:100%; 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-image:linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("SoftTax-Background.png");
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position: center;
         }
 
-        form{
-            display: block;
-            margin:0 auto;
+        .tab{
             width:100%;
+            background-color:#fff;
+        }
+
+        .tab button{
+            background-color:transparent;
+            border:none;
+            color:#4d4d4d;
+            font-size:18px;
+            padding:12px 5px;
+            outline:none;
+            transition: 0.2s ease-out;
+        }
+
+        .tab button.active{
+            color:#333;
+            background-color:#e6e6e6;
+            font-weight:bold;
+        }
+
+        .tab:nth-child(2) button:active{
+            border:none;
+        }
+
+        img{
+            width:50%;
+            display:block;
+            margin:5% auto 0%;
         }
 
         .input_container .input_icon{
             position:relative;
             top:37px;
-            left:50px;
-            color:#999;
+            left:25px;
+            color:#4d4d4d;
             font-size:20px;
         }
 
+        /*
+        inputContainer inputIcon{
+            position:"relative";
+            top:37;
+            left:50;
+            color:"#999";
+            fontSize:20;
+        }
+        */
+
         .input_container input{
-            display:block;
-            width:80%;
+            display: block;
+            width:90%;
             height:50px;
-            margin:auto;
-            border:1px solid #999;
+            margin:0px auto;
+            border:none;
             border-radius:5px;
             outline:none;
-            font-size:16px;
+            font-size:17px;
             text-indent:15px;
-            padding:20px 40px;
-            color:#666;
+            padding:20px 15px;
+            color:#4d4d4d;
             letter-spacing:1px;
             box-sizing:border-box;
-            background-color:transparent;
+            background-color:#fff;
         }
+
+        /*inputContainer input{
+            width:"80%";
+            height:50;
+            marginLeft:30;
+            marginRight:30;
+            borderWidth:1;
+            borderColor:"#666";
+            borderRadius:5;
+            outline:"none";
+            fontSize:16;
+        }*/
+
+        .beside{display:flex; margin:0px 10px;}
+
+        .beside .input_icon{left:16px;}
+
         .register a{text-decoration:none;}
 
         .register button{
             display:block;
-            margin:7% auto 2%;
+            margin:7% auto;
             height:50px;
-            width:80%;
+            width:90%;
             border:none;
             border-radius:2px;
             outline:none;  
             cursor:pointer;
             font-size:16px;
-            background-color:#006600;
+            background-color:#e6c300;
             color:#fff;
             box-shadow: 0px 3px 5px rgba(0,0,0,.2);
         }
@@ -94,45 +134,212 @@
     </head>
     <body>
     <section>
-        <div class="heading">
-            <span class="softtax"><i>Soft</i><h1>Tax</h1></span> 
-            <p><i>the smart way to manage your tax</i></p>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'individual')" id="defaultOpen">Individual TaxPayer</button>
+            <button class="tablinks" onclick="openTab(event, 'cooperate')">Cooperate TaxPayer</button>
         </div>
-            <form class="form">
-            <div class="input_container">
-                <span class="input_icon material-icons">person</span>
-                <input type="text" name="name" placeholder="FirstName">
-            </div>
 
-            <div class="input_container">
-                <span class="input_icon material-icons">person</span>
-                <input type="text" name="name" placeholder="LastName">
-            </div>
-
-            <div class="input_container">
-                <span class="input_icon material-icons">email</span>
-                <input type="text" name="email" placeholder="Email Address">
-            </div>
-
-            <div class="input_container">
-                <span class="input_icon material-icons">lock</span>
-                <input type="password" name="password" placeholder="Password">
-            </div>
-
-            <div class="input_container">
-                <span class="input_icon material-icons">lock</span>
-                <input type="password" name="password" placeholder="Confirm password">
-            </div>
+            <div id="individual" class="tabcontent">
+                <form class="form">
+                    <img src="SoftTax-Logo.png" alt="">
+                    <div class="input_container">
+                        <span class="input_icon material-icons">person</span>
+                        <input type="text" name="name" placeholder="Surname">
+                    </div>
             
-            <div class="register">
-                <a href=""><button>REGISTER</button></a>
-            </div>
-
-            <div class="footer">
-                <p>Already have an account? <a href="Login.html">Log in</a></p>
-            </div>     
+                    <div class="beside">
+                        <div class="input_container">  
+                            <span class="input_icon material-icons">person</span>
+                            <input type="text" name="name" placeholder="Firstname">
+                        </div>
+                    
+                        <div class="input_container">
+                            <span class="input_icon material-icons">person</span>
+                            <input type="text" name="name" placeholder="Middlename">
+                        </div>
+                    </div>
             
-        </form>
+                    <div class="input_container ">
+                        <span class="input_icon material-icons">person</span>
+                        <input type="text" name="name" placeholder="Username">
+                    </div>
+                
+                    <div class="input_container ">
+                        <span class="input_icon material-icons">date_range</span>
+                        <input type="text" name="date" placeholder="DateOfBirth">
+                    </div>
+                        
+                    <div class="input_container">
+                        <span class="input_icon material-icons">phone</span>
+                        <input type="number" name="number" placeholder="PhoneNumber">
+                    </div>
+                
+                    <div class="input_container">
+                        <span class="input_icon material-icons">email</span>
+                        <input type="text" name="email" placeholder="EmailAddress">
+                    </div>
+            
+                    <div class="beside">
+                        <div class="input_container">
+                            <span class="input_icon material-icons">lock</span>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                    
+                        <div class="input_container">
+                            <span class="input_icon material-icons">lock</span>
+                            <input type="password" name="password" placeholder="ConfirmPassword">
+                        </div>
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">store_mall_directory</span>
+                        <input type="text" name="name" placeholder="TaxOffice">
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">people</span>
+                        <input type="text" name="name" placeholder="MaritalStatus">
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">work</span>
+                        <input type="text" name="name" placeholder="Occupation">
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">work</span>
+                        <input type="text" name="name" placeholder="Profession">
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">flag</span>
+                        <input type="text" name="name" placeholder="Nationality">
+                    </div>
+            
+                    <div class="beside">
+                        <div class="input_container">
+                            <span class="input_icon material-icons">person_pin</span>
+                            <input type="text" name="name" placeholder="OriginState">
+                        </div>
+                    
+                        <div class="input_container">
+                            <span class="input_icon material-icons">person_pin</span>
+                            <input type="text" name="name" placeholder="OriginLGA">
+                        </div>
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">person_pin</span>
+                        <input type="text" name="name" placeholder="ContactAddress">
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">person_pin</span>
+                        <input type="text" name="name" placeholder="ResidenceState">
+                    </div>
+            
+                    <div class="input_container">
+                        <span class="input_icon material-icons">person_pin</span>
+                        <input type="text" name="name" placeholder="ResidenceAddress">
+                    </div>
+                            
+                    <div class="register">
+                        <a href=""><button>REGISTER</button></a>
+                    </div>    
+                            
+                </form>
+            </div>
+              
+            <div id="cooperate" class="tabcontent">
+                    <form class="form">
+                        <img src="SoftTax-Logo.png" alt="">
+                            <div class="input_container">
+                                <span class="input_icon material-icons">person</span>
+                                <input type="text" name="name" placeholder="Surname">
+                            </div>
+                    
+                            <div class="beside">
+                                <div class="input_container">  
+                                    <span class="input_icon material-icons">person</span>
+                                    <input type="text" name="name" placeholder="Firstname">
+                                </div>
+                            
+                                <div class="input_container">
+                                    <span class="input_icon material-icons">person</span>
+                                    <input type="text" name="name" placeholder="Middlename">
+                                </div>
+                            </div>
+                    
+                            <div class="input_container ">
+                                <span class="input_icon material-icons">person</span>
+                                <input type="text" name="name" placeholder="Username">
+                            </div>
+                        
+                            <div class="input_container ">
+                                <span class="input_icon material-icons">date_range</span>
+                                <input type="text" name="date" placeholder="DateOfBirth">
+                            </div>
+                                
+                            <div class="input_container">
+                                <span class="input_icon material-icons">phone</span>
+                                <input type="number" name="number" placeholder="PhoneNumber">
+                            </div>
+                        
+                            <div class="input_container">
+                                <span class="input_icon material-icons">email</span>
+                                <input type="text" name="email" placeholder="EmailAddress">
+                            </div>
+                    
+                            <div class="beside">
+                                <div class="input_container">
+                                    <span class="input_icon material-icons">lock</span>
+                                    <input type="password" name="password" placeholder="Password">
+                                </div>
+                            
+                                <div class="input_container">
+                                    <span class="input_icon material-icons">lock</span>
+                                    <input type="password" name="password" placeholder="ConfirmPassword">
+                                </div>
+                            </div>
+                    
+                            <div class="input_container">
+                                <span class="input_icon material-icons">person</span>
+                                <input type="text" name="name" placeholder="CorporateName">
+                            </div>
+                    
+                            <div class="input_container">
+                                <span class="input_icon material-icons">person_pin</span>
+                                <input type="text" name="name" placeholder="OfficeAddress">
+                            </div>
+                    
+                            <div class="input_container">
+                                <span class="input_icon material-icons">phone</span>
+                                <input type="text" name="name" placeholder="OfficePhone">
+                            </div>
+                                    
+                            <div class="register">
+                                <a href=""><button>REGISTER</button></a>
+                            </div>    
+                                    
+                        </form> 
+              </div>     
     </section>
+    <script>
+    function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+    </script>
 </body>
 </html>
