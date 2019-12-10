@@ -1,10 +1,19 @@
-import React from 'react';
-import { Text,View } from 'react-native';
+import React, { Component } from 'react';
+import { Text,View, Button } from 'react-native';
 
-const RaiseInfSec = () => {
-    return (
-        <Text>RaiseInfSec</Text>
-    );
-}
+class RaiseInfSec extends Component {
+    static navigationOptions = {
+      drawerLabel: 'RaiseInfSec',
+    };
+  
+    render() {
+      return (
+        <Button
+          onPress={() => this.props.navigation.navigate('Register')}
+          title="Go to Register"
+        />
+      );
+    }
+  }
 
 export default RaiseInfSec;

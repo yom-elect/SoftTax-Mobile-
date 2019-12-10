@@ -4,7 +4,9 @@ import { View, StyleSheet } from "react-native";
 
 
 
-const CustomHeader = ({ navigation }) => (
+const CustomHeader = ({ navigation }) => {
+  //console.log(navigation)
+  return (
   <View style={styles.container}>
     <Ionicons
       name="md-menu"
@@ -13,7 +15,7 @@ const CustomHeader = ({ navigation }) => (
       onPress={() => navigation.openDrawer()}
     />
   </View>
-);
+)};
 const styles = StyleSheet.create({
     container: {
       borderBottomWidth: 2,

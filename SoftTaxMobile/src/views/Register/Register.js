@@ -10,7 +10,7 @@ export default class Register extends Component {
           title="Register"
           onPress={() => this.props.navigation.navigate("Login")}
         />
-        <TouchableOpacity  onPress={()=> navigation.navigate('Login')}>
+        <TouchableOpacity  onPress={()=> this.props.navigation.navigate('Login')}>
             <Text>skip if you have an account ?</Text>
         </TouchableOpacity>
       </View>

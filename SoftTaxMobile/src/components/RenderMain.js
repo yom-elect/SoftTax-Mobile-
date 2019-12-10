@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { Button, View ,Text, TouchableOpacity, StyleSheet} from "react-native";
+import CustomHeader from './CustomHeader/CustomHeader'
+
 
 export default class RenderMain extends Component {
+  
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          title="Login"
-          onPress={() => this.props.navigation.navigate("MainPage")}
-        />
-        <TouchableOpacity  onPress={()=> this.props.navigation.navigate('Register')}>
-            <Text>Don't have an account ?</Text>
-        </TouchableOpacity>
+        <CustomHeader navigation= {this.props.navigation}/>
       </View>
     );
   }

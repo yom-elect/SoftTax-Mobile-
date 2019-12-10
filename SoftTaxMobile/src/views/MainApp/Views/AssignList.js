@@ -1,10 +1,19 @@
-import React from 'react';
-import { Text,View } from 'react-native';
+import React, { Component } from 'react';
+import { Text,View,Button } from 'react-native';
 
-const AssignList = () => {
-    return (
-        <Text>AssignList</Text>
-    );
-}
+class AssignList extends Component {
+    static navigationOptions = {
+      drawerLabel: 'AssignList',
+    };
+  
+    render() {
+      return (
+        <Button
+          onPress={() => this.props.navigation.navigate('RaiseInfSec')}
+          title="Go to Assigned List"
+        />
+      );
+    }
+  }
 
 export default AssignList;
