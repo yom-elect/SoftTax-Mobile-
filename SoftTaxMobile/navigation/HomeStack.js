@@ -5,30 +5,24 @@ import {
 } from "react-navigation";
 import { Block } from "galio-framework";
 
-import Home from "../screens/Home";
-import Pro from "../screens/Pro";
-
 import Header from "../components/Header";
-
+import Elements from "../screens/Elements";
+// import ElementsStack from './ElementsStack'
+import SearchStack from './SearchStack'
 import transitionConfig from './transitionConfig'
+
 
 const HomeStack = createStackNavigator(
     {
-      Home: {
-        screen: Home,
+        Home: {
+        screen: SearchStack,
         navigationOptions: ({ navigation }) => ({
-          header: <Header search options title="Home" navigation={navigation} />
+          header: <Header title="Customer Search" navigation={navigation} />
         })
       },
-      Pro: {
-        screen: Pro,
-        navigationOptions: ({ navigation }) => ({
-          header: (
-            <Header left={<Block />} white transparent title="" navigation={navigation} />
-          ),
-          headerTransparent: true
-        })
-      }
+      Customer: {
+          screen: Elements
+        }
     },
     {
       cardStyle: {

@@ -12,7 +12,7 @@ import ArticlesStack from './ArticlesStack';
 import ProfileStack from './ProfileStack';
 import RegisterStack from './RegisterStack';
 import HomeStack from './HomeStack';
-import ElementsStack from './ElementsStack'
+
 
 
 // drawer
@@ -37,7 +37,7 @@ const AppStack = createDrawerNavigator(
       screen: HomeStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} title="Home" />
+          <DrawerItem focused={focused} title="Manage Tax Payers" />
         )
       })
     },
@@ -45,7 +45,7 @@ const AppStack = createDrawerNavigator(
       screen: ProfileStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="Profile" title="Profile" />
+          <DrawerItem focused={focused} screen="Profile" title="User Dashboards" />
         )
       })
     },
@@ -57,14 +57,14 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    Elements: {
-      screen: ElementsStack,
-      navigationOptions: navOpt => ({
-        drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="Elements" title="Elements" />
-        )
-      })
-    },
+    // Elements: {
+    //   screen: ElementsStack,
+    //   navigationOptions: navOpt => ({
+    //     drawerLabel: ({ focused }) => (
+    //       <DrawerItem focused={focused} screen="Elements" title="Elements" />
+    //     )
+    //   })
+    // },
     Articles: {
       screen: ArticlesStack,
       navigationOptions: navOpt => ({

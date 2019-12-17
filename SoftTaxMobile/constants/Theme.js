@@ -28,5 +28,6 @@ export default {
     BORDER: '#CAD1D7',
     WHITE: '#FFFFFF',
     BLACK: '#000000',
+    APP_COLOUR : "#FAEF23"
   }
 };

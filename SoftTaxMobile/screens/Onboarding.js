@@ -3,6 +3,8 @@ import {
   ScrollView,
   ImageBackground,
   KeyboardAvoidingView,
+  Keyboard,
+  TouchableWithoutFeedback,
   Image,
   StyleSheet,
   StatusBar,
@@ -54,73 +56,78 @@ class Onboarding extends React.Component {
   }
 
   render() {
-    
     return (
-      <Block flex style={styles.container}>
-        <StatusBar hidden />
-        <Block flex center style= {styles.heading}  >
-        <ImageBackground
-            source={Images.Onboarding}
-            style={{ height, width, zIndex: 1, opacity: 0.1 }}
-          />
-        </Block>
-        <Block center>
-          <Image source={Images.LogoOnboarding} style={styles.logo} />
-        </Block>
-        <Block flex space="between" style={styles.padded}>
-          
-          <KeyboardAvoidingView  
-                    style={{ flex: 1 }}
-                    behavior="padding"
-                    enabled>
-            <Block flex space="around" style={{ zIndex: 2 }}>
-              <Block style={styles.title}>
-                <Block>
-                <Input
-                    right
-                    color="black"
-                    placeholder="Username"
-                    placeholderTextColor={'#8898AA'}
-                    onChangeText = {this.onChangeUser}
-                    iconContent={
-                      <Icon
-                        size={14}
-                        color={argonTheme.COLORS.ICON}
-                        name="link"
-                        family="AntDesign"
-                      />
-                    }
-                  />
+      <TouchableWithoutFeedback onPress = {()=>{
+          Keyboard.dismiss();
+      }}>
+           <Block flex style={styles.container}>
+          <StatusBar hidden />
+          <Block flex center style= {styles.heading}  >
+          <ImageBackground
+              source={Images.Onboarding}
+              style={{ height, width, zIndex: 1, opacity: 0.1 }}
+            />
+          </Block>
+          <Block center>
+            <Image source={Images.LogoOnboarding} style={styles.logo} />
+          </Block>
+          <Block flex space="between" style={styles.padded}>
+            
+            
+              <Block flex space="around" style={{ zIndex: 2 }}>
+              <KeyboardAvoidingView  
+                      style={{ flex: 1 }}
+                      behavior="padding"
+                      enabled>
+                  <Block>
+                <Block style={styles.title}>
+                  <Input
+                      right
+                      color="black"
+                      placeholder="Username"
+                      placeholderTextColor={'#8898AA'}
+                      onChangeText = {this.onChangeUser}
+                      iconContent={
+                        <Icon
+                          size={14}
+                          color={argonTheme.COLORS.ICON}
+                          name="link"
+                          family="AntDesign"
+                        />
+                      }
+                    />
+                  </Block>
+                  <Block>
+                  <Input
+                      password
+                      viewPass
+                      right
+                      color="black"
+                      placeholder="Password"
+                      placeholderTextColor={'#8898AA'}
+                      onChangeText = {this.onChangePassword}
+                    />
+                  </Block>
                 </Block>
-                <Block>
-                <Input
-                    password
-                    viewPass
-                    right
-                    color="black"
-                    placeholder="Password"
-                    placeholderTextColor={'#8898AA'}
-                    onChangeText = {this.onChangePassword}
-                   />
+                </KeyboardAvoidingView>
+                <Block center>
+                  <Button
+                    style={styles.button}
+                  color= "#faef23"
+                    onPress={this.onNavigateHandler}
+                    textStyle={{ color: argonTheme.COLORS.BLACK }}
+                  >
+                    Login
+                  </Button>
+                  {/* <TouchableOpacity style = {styles.subTitle} onPress = {()=> navigation.navigate("Register")}>
+                      <Text style= {styles.alternate}>Don't have an account? <Text style = {{color : '#103a89'}}>Sign Up</Text> </Text>
+                  </TouchableOpacity> */}
                 </Block>
-              </Block>
-              <Block center>
-                <Button
-                  style={styles.button}
-                 color= "#faef23"
-                  onPress={this.onNavigateHandler}
-                  textStyle={{ color: argonTheme.COLORS.BLACK }}
-                >
-                  Login
-                </Button>
-                {/* <TouchableOpacity style = {styles.subTitle} onPress = {()=> navigation.navigate("Register")}>
-                    <Text style= {styles.alternate}>Don't have an account? <Text style = {{color : '#103a89'}}>Sign Up</Text> </Text>
-                </TouchableOpacity> */}
-              </Block>
-          </Block> 
-          </KeyboardAvoidingView>
+            </Block> 
+          </Block>
         </Block>
-      </Block>
+      </TouchableWithoutFeedback>
+     
     );
   }
 }
@@ -153,10 +160,10 @@ const styles = StyleSheet.create({
     // height: 60,
     zIndex: 2,
     position: 'relative',
-    marginTop: '-50%'
+    marginTop: '-50%',
   },
   title: {
-    marginTop:'-5%'
+    marginTop:'5%'
   },
   subTitle: {
     marginTop: 20

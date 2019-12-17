@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { Block, theme } from 'galio-framework';
+import { StyleSheet, Dimensions, ScrollView, Text,  } from 'react-native';
+import { Block, theme,Button } from 'galio-framework';
 
-import { Card } from '../components';
-import articles from '../constants/articles';
 const { width } = Dimensions.get('screen');
+import Input from '../components/Input'
+import {argonTheme} from '../constants/'
+
 
 class Home extends React.Component {
   renderArticles = () => {
@@ -13,13 +14,34 @@ class Home extends React.Component {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
         <Block flex>
-          <Card item={articles[0]} horizontal  />
+            <Block>
+              <Text>Customer Search</Text>
+            </Block>
           <Block flex row>
-            <Card item={articles[1]} style={{ marginRight: theme.SIZES.BASE }} />
-            <Card item={articles[2]} />
+            <Text>TAX PAYER ID: </Text>
+            <Input/>
           </Block>
-          <Card item={articles[3]} horizontal />
-          <Card item={articles[4]} full />
+          <Block flex row>
+            <Text>Other Names: </Text>
+            <Input/>
+          </Block>
+          <Block flex row>
+            <Text>Surname: </Text>
+            <Input/>
+          </Block>
+          <Block flex row>
+            <Text>Email: </Text>
+            <Input/>
+          </Block>
+          <Block flex row>
+            <Text>Phone Number: </Text>
+            <Input/>
+          </Block>
+          <Button style= {styles.button}
+                  color= {argonTheme.COLORS.APP_COLOUR} 
+                  onPress={() => this.props.navigation.navigate('Customer')} >
+                           Search
+                    </Button>
         </Block>
       </ScrollView>
     )
@@ -41,6 +63,12 @@ const styles = StyleSheet.create({
   articles: {
     width: width - theme.SIZES.BASE * 2,
     paddingVertical: theme.SIZES.BASE,
+  },
+  button: {
+    width: width - theme.SIZES.BASE * 4,
+    height: theme.SIZES.BASE * 3,
+    shadowRadius: 0,
+    shadowOpacity: 0,
   },
 });
 

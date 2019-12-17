@@ -3,7 +3,7 @@ import {
   createStackNavigator,
 } from "react-navigation";
 
-import Elements from "../screens/Elements";
+
 import Header from "../components/Header";
 
 import transitionConfig from './transitionConfig'
@@ -11,9 +11,9 @@ import transitionConfig from './transitionConfig'
 const ElementsStack = createStackNavigator({
     Elements: {
       screen: Elements,
-      navigationOptions: ({ navigation }) => ({
-        header: <Header title="Elements" navigation={navigation} />
-      })
+      // navigationOptions: ({ navigation }) => ({
+      //   header: <Header title="Elements" navigation={navigation} />
+      // })
     }
   },{
     cardStyle: {

@@ -9,7 +9,7 @@ import { argonTheme } from "../constants";
 
 class ArInput extends React.Component {
   render() {
-    const { shadowless, success, error } = this.props;
+    const { shadowless, success, error, style } = this.props;
 
     const inputStyles = [
       styles.input,
@@ -23,7 +23,7 @@ class ArInput extends React.Component {
       <Input
         placeholder="write something here"
         placeholderTextColor={argonTheme.COLORS.MUTED}
-        style={inputStyles}
+        style={{...inputStyles,...style}}
         color={argonTheme.COLORS.HEADER}
         
         {...this.props}
