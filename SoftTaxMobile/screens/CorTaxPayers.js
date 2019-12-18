@@ -45,18 +45,18 @@ class CorTaxPayers extends React.Component {
                       <Block>
                         <FlatList
                         data = {Placeholders.CorHolders}
-                        renderItem = {({item})=> ( <Input borderless 
-                          placeholder={item} 
+                        renderItem = {({item})=> ( <Input password={item.password} borderless 
+                          placeholder={item.name} 
                           iconContent={
                                <Icon
                                  size={16}
                                  color={argonTheme.COLORS.ICON}
-                                 name="hat-3"
+                                 name={item.icon}
                                  family="ArgonExtra"
                                  style={styles.inputIcons}
                                />
                              }/>) }
-                             keyExtractor = {item=> item}
+                             keyExtractor = {item=> item.name}
                         />
                       </Block>
                       <Block>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.92,
     height: height * 0.95,
-    backgroundColor: "#F4F5F7",
+    backgroundColor: "#fff",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
     shadowOffset: {
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     marginTop: 25
   },
   button: {
-    width: width - theme.SIZES.BASE * 4,
+    width: width - theme.SIZES.BASE * 3,
     height: theme.SIZES.BASE * 3,
     shadowRadius: 0,
     shadowOpacity: 0,
