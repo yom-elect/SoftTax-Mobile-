@@ -73,7 +73,6 @@ class Onboarding extends React.Component {
           </Block>
           <Block flex space="between" style={styles.padded}>
             
-            
               <Block flex space="around" style={{ zIndex: 2 }}>
               <KeyboardAvoidingView  
                       style={{ flex: 1 }}
@@ -83,7 +82,7 @@ class Onboarding extends React.Component {
                 <Block style={styles.title}>
                   <Input
                       right
-                      color="black"
+                      color="#4d4d4d"
                       placeholder="Username"
                       placeholderTextColor={'#8898AA'}
                       onChangeText = {this.onChangeUser}
@@ -91,8 +90,8 @@ class Onboarding extends React.Component {
                         <Icon
                           size={14}
                           color={argonTheme.COLORS.ICON}
-                          name="link"
-                          family="AntDesign"
+                          name="user"
+                          family="Feather"
                         />
                       }
                     />
@@ -102,7 +101,7 @@ class Onboarding extends React.Component {
                       password
                       viewPass
                       right
-                      color="black"
+                      color="#4d4d4d"
                       placeholder="Password"
                       placeholderTextColor={'#8898AA'}
                       onChangeText = {this.onChangePassword}
@@ -113,9 +112,9 @@ class Onboarding extends React.Component {
                 <Block center>
                   <Button
                     style={styles.button}
-                  color= "#faef23"
+                    color= "#faef23"
                     onPress={this.onNavigateHandler}
-                    textStyle={{ color: argonTheme.COLORS.BLACK }}
+                    textStyle={{ color: "#4d4d4d" }}
                   >
                     Login
                   </Button>
@@ -150,44 +149,25 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   button: {
+    position: 'relative',
+    marginTop: '-68%',
+    paddingTop: 23,
     width: width - theme.SIZES.BASE * 4,
     height: theme.SIZES.BASE * 3,
     shadowRadius: 0,
     shadowOpacity: 0,
+   
   },
   logo: {
-    // width: 200,
-    // height: 60,
     zIndex: 2,
     position: 'relative',
-    marginTop: '-50%',
+    marginTop: '-60%'
   },
   title: {
-    marginTop:'5%'
+    marginBottom:'5%',
+    height: theme.SIZES.BASE * 3,
   },
-  subTitle: {
-    marginTop: 20
-  },
-  softtax:{
-    flex: 1,
-    color: '#103a89',
-    fontSize:40,
-    paddingLeft : 5,
-    marginTop:80
-  },
-  caption : {
-    paddingTop: 5,
-    paddingRight: 25,
-    paddingBottom: 5 , 
-    paddingLeft: 8,
-    color : theme.COLORS.WHITE,
-    backgroundColor: '#008000',
-    width: '65%',
-    borderTopRightRadius: 100,
-    borderBottomRightRadius: 0,
-    borderBottomEndRadius:0,
-    borderBottomLeftRadius:0,
-  } , 
+  
   alternate : {
     color : '#D3D3D3',
   }

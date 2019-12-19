@@ -27,10 +27,10 @@ class Register extends React.Component {
         <StatusBar hidden />
         <ImageBackground
           source={Images.RegisterBackground}
-          style={{ width, height, zIndex: 1, }}>
+          style={{ width, height, zIndex: 1,}}>
           <Block flex middle>
             <Block style={styles.registerContainer}>
-              <Block style={{ marginTop: theme.SIZES.BASE }}>
+            <Block style={{ marginTop: theme.SIZES.BASE }}>
                 <Image source={Images.Logo} style={styles.logo} />
               </Block>
               <Block flex>
@@ -41,22 +41,22 @@ class Register extends React.Component {
                     enabled
                   >
                     <Block width={width * 0.9} style={{ marginBottom: 15 }}>
-                        <ScrollView>
+                      <ScrollView>
                             <Block>
                             <FlatList
                             data = {Placeholders.IndHolders}
                             renderItem = {({item})=> ( <Input borderless 
-                              placeholder={item} 
+                              placeholder={item.name} 
                               iconContent={
                                   <Icon
                                     size={16}
                                     color={argonTheme.COLORS.ICON}
-                                    name="hat-3"
-                                    family="ArgonExtra"
+                                    name={item.icon}
+                                    family="Feather"
                                     style={styles.inputIcons}
                                   />
                                 }/>) }
-                                keyExtractor = {item=> item}
+                                keyExtractor = {item=> item.name}
                             />
                           </Block>
                           <Block>
@@ -68,9 +68,7 @@ class Register extends React.Component {
                               Register
                             </Button>
                           </Block>
-                        </ScrollView>
-                      
-                      
+                        </ScrollView> 
                     </Block>
                   </KeyboardAvoidingView>
                 </Block>
@@ -123,11 +121,12 @@ const styles = StyleSheet.create({
     marginTop: 25
   },
   button: {
-    width: width - theme.SIZES.BASE * 4,
+    width: width - theme.SIZES.BASE * 2,
     height: theme.SIZES.BASE * 3,
     shadowRadius: 0,
     shadowOpacity: 0,
-    backgroundColor:"#faef23"
+    backgroundColor:"#faef23",
+    marginBottom:10,
   }
 });
 

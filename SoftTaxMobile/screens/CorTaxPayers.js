@@ -27,7 +27,7 @@ class CorTaxPayers extends React.Component {
         <StatusBar hidden />
         <ImageBackground
           source={Images.RegisterBackground}
-          style={{ width, height, zIndex: 1, }}>
+          style={{ width, height, zIndex: 1}}>
           <Block flex middle>
             <Block style={styles.registerContainer}>
               <Block style={{ marginTop: theme.SIZES.BASE }}>
@@ -45,14 +45,14 @@ class CorTaxPayers extends React.Component {
                       <Block>
                         <FlatList
                         data = {Placeholders.CorHolders}
-                        renderItem = {({item})=> ( <Input password={item.password} borderless 
+                        renderItem = {({item})=> ( <Input borderless 
                           placeholder={item.name} 
                           iconContent={
                                <Icon
                                  size={16}
                                  color={argonTheme.COLORS.ICON}
                                  name={item.icon}
-                                 family="ArgonExtra"
+                                 family="Feather"
                                  style={styles.inputIcons}
                                />
                              }/>) }
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.92,
     height: height * 0.95,
-    backgroundColor: "#fff",
+    backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
     shadowOffset: {
@@ -121,11 +121,11 @@ const styles = StyleSheet.create({
     marginTop: 25
   },
   button: {
-    width: width - theme.SIZES.BASE * 3,
+    width: width - theme.SIZES.BASE * 2,
     height: theme.SIZES.BASE * 3,
     shadowRadius: 0,
     shadowOpacity: 0,
-    backgroundColor:"#faef23"
+    backgroundColor:"#faef23",
   }
 });
 
