@@ -13,23 +13,23 @@ class Pro extends React.Component {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
-        <Block flex style={styles.container}>
+        <Block flex>
             <Block>
-              <Text>Customer Search</Text>
+              <Text style={styles.search}>Customer Search</Text>
             </Block>
-          <Block flex row>
-            <Text>TAX PAYER ID: </Text>
-            <Input/>
+          <Block flex row style={styles.detail}>
+            <Text style={{paddingRight:20,}}>TAX PAYER ID: </Text>
+            <Input style={styles.input}/>
           </Block>
-          <Block flex row>
-            <Text>Org Name: </Text>
-            <Input/>
+          <Block flex row style={styles.detail}>
+            <Text style={{paddingRight:45,}}>Org Name: </Text>
+            <Input style={styles.input}/>
           </Block>
-          <Block flex row>
-            <Text>Phone Number: </Text>
-            <Input/>
+          <Block flex row style={styles.detail}>
+            <Text style={{paddingRight:18,}}>Phone Number: </Text>
+            <Input style={styles.input}/>
           </Block>
-          <Block flex row>
+          <Block flex row style={styles.detail}>
             <Text>Industry: </Text>
             <Picker 
             style={styles.picker}
@@ -39,8 +39,8 @@ class Pro extends React.Component {
               <Picker.Item label="Farming And Mining" value="Agric"/>
             </Picker>
           </Block>
-          <Block flex row>
-            <Text>Sector: </Text>
+          <Block flex row style={styles.detail}>
+            <Text style={{marginRight:10}}>Sector: </Text>
             <Picker  
             style={styles.picker}
             selectedValue = "Select Division"
@@ -51,7 +51,8 @@ class Pro extends React.Component {
           </Block>
           <Button 
             style= {styles.button} 
-            color= {argonTheme.COLORS.APP_COLOUR}
+            color= {"#faef23"} 
+            textStyle={{ color: "#4d4d4d" }}
             onPress={() => this.props.navigation.navigate('Customer')} >
                     Search
             </Button>
@@ -70,13 +71,10 @@ class Pro extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
     picker: {
       width: 200,
+      marginTop:"-5%",
+      marginLeft:60
     },
   home: {
     width: width,    
@@ -91,6 +89,18 @@ const styles = StyleSheet.create({
     shadowRadius: 0,
     shadowOpacity: 0,
   },
+  search:{
+    paddingTop:10,
+    paddingBottom:20,
+  },
+  input: {
+    marginTop:"-10%",
+    paddingTop:'4%'
+  },
+  detail:{
+    marginBottom:15,
+    marginTop:15
+  }
 });
 
 export default Pro;
