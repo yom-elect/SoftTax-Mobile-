@@ -1,18 +1,29 @@
 import React from "react";
-import { DrawerItems } from "react-navigation";
+import { DrawerItems,SafeAreaView } from "react-navigation";
 import {
   ScrollView,
   StyleSheet,
   Dimensions,
-  Image
+  Image,
+  Button
 } from "react-native";
 import { Block, theme } from "galio-framework";
+import { useDispatch } from 'react-redux';
+import Icon from "../components/Icon";
+import argonTheme from "../constants/Theme";
 
+
+import {authLogout} from '../redux/actions/LoginActions'
 import Images from "../constants/Images";
 
 const { width } = Dimensions.get("screen");
 
-const Drawer = props => (
+// const onLogoutHandler=()=>{
+ 
+  
+// }
+
+const Drawer = (props,dispatch) => (
   <Block style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
     <Block flex={0.05} style={styles.header}>
       <Image styles={styles.logo} source={Images.Logo} />
@@ -20,13 +31,39 @@ const Drawer = props => (
     <Block flex>
       <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
         <DrawerItems {...props} />
+        
       </ScrollView>
     </Block>
   </Block>
 );
 
 const Menu = {
-  contentComponent: props => <Drawer {...props} />,
+contentComponent: props => {
+  const dispatch = useDispatch();
+  return(
+    <Block flex>
+      <Drawer {...props} dispatch/>
+      <Button 
+        style= {{paddingTop:20}}
+        title = "Logout"
+        color = {argonTheme.COLORS.ERROR}
+        onPress={() => {
+          dispatch(authLogout());
+          props.navigation.navigate('Auth');
+        }} 
+        iconContent={
+          <Icon 
+            name="logout"
+           family = "AntDesign"
+          size= {12}
+        color = {argonTheme.COLORS.ERROR}
+        />
+        }
+      />   
+    </Block>
+  )
+
+},
   drawerBackgroundColor: "white",
   drawerWidth: width * 0.8,
   contentOptions: {

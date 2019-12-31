@@ -1,17 +1,18 @@
 import React from "react";
-import { Easing, Animated } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import {
   createDrawerNavigator,
   createAppContainer,
-  
+  createSwitchNavigator
 } from "react-navigation";
 
 // screens
-import Onboarding from "../screens/Onboarding";
 import ArticlesStack from './ArticlesStack';
-import ProfileStack from './ProfileStack';
+// import ProfileStack from './ProfileStack';
 import RegisterStack from './RegisterStack';
 import HomeStack from './HomeStack';
+import AuthStack from './AuthNavigator'
+
 
 
 
@@ -21,31 +22,18 @@ import DrawerItem from "../components/DrawerItem";
 
 // header for screens
 // import Header from "../components/Header";
+import StartupScreen from '../screens/StartupScreen'
 
 
+//Drawer Navigator
 
-// divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
-    Onboarding: {
-      screen: Onboarding,
-      navigationOptions: {
-        drawerLabel: () => {}
-      }
-    },
     Home: {
       screen: HomeStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} title="Manage Tax Payers" />
-        )
-      })
-    },
-    Profile: {
-      screen: ProfileStack,
-      navigationOptions: navOpt => ({
-        drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="Profile" title="User Dashboards" />
         )
       })
     },
@@ -57,14 +45,6 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    // Elements: {
-    //   screen: ElementsStack,
-    //   navigationOptions: navOpt => ({
-    //     drawerLabel: ({ focused }) => (
-    //       <DrawerItem focused={focused} screen="Elements" title="Elements" />
-    //     )
-    //   })
-    // },
     Articles: {
       screen: ArticlesStack,
       navigationOptions: navOpt => ({
@@ -77,5 +57,12 @@ const AppStack = createDrawerNavigator(
   Menu
 );
 
-const AppContainer = createAppContainer(AppStack);
+
+const MainNavigator = createSwitchNavigator({
+  Startup: StartupScreen,
+  Auth: AuthStack,
+  App: AppStack
+})
+
+const AppContainer = createAppContainer(MainNavigator);
 export default AppContainer;

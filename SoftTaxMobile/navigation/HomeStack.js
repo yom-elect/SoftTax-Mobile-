@@ -1,5 +1,4 @@
 import React from "react";
-import { Easing, Animated } from "react-native";
 import {
   createStackNavigator,
 } from "react-navigation";
@@ -9,6 +8,7 @@ import Header from "../components/Header";
 import Elements from "../screens/Elements";
 // import ElementsStack from './ElementsStack'
 import SearchStack from './SearchStack'
+import CustomerStack from './CustomerStack'
 import transitionConfig from './transitionConfig'
 
 
@@ -21,7 +21,10 @@ const HomeStack = createStackNavigator(
         })
       },
       Customer: {
-          screen: Elements
+          screen: CustomerStack,
+          navigationOptions: ({ navigation }) => ({
+            header: <Header title="Assessment"  navigation={navigation} />
+          })
         }
     },
     {

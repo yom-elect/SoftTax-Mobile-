@@ -7,8 +7,14 @@ import {
   StatusBar,
   KeyboardAvoidingView,
  FlatList,
-  Image
+ Keyboard,
+  Image, ActivityIndicator, Alert, TouchableWithoutFeedback
 } from "react-native";
+
+import DatePicker from 'react-native-datepicker'
+import {connect} from 'react-redux'
+
+import { registerTaxPayer,regFail } from "../redux/actions/RegisterActions";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 import Placeholders from '../constants/regPlaceHolders'
 import { Button, Icon, Input } from "../components";
@@ -18,11 +24,63 @@ import { Images, argonTheme } from "../constants";
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
+  state = {
+    individualInfo:{
+    Surname:'',
+    'First Name':'',
+    'Middle Name':'',
+    'Date Of Birth':'',
+    Email:'',
+    'Phone Number':'',
+    Username:'',
+    Password:'',
+    'Confirm Password' :'',
+    'Tax Office' :'',
+    'Marital Status':'',
+    Occupation:'',
+    Nationality:'',
+    "Contact Address":'',
+    "Residence Address" : '',
+    Profession:'',
+    'Origin State':'',
+    'Origin LGA' :'',
+  }
+}
 
+  inputIndividualHandler = (input,inputIdentifier)=>{
+    // console.log(input,inputIdentifier)
+    const individualForm = {
+      ...this.state.individualInfo,
+      [inputIdentifier]:input
+    }
+    this.setState({individualInfo:individualForm})
+  }
+
+  onRegisterIndividual = async ()=>{
+    const {navigation, onError, onRegister , error, isLoading} = this.props
+    let {individualInfo} = this.state
+    try {
+    let type = 'Individual'
+    console.log(individualInfo)
+
+    const result = await onRegister(individualInfo, type)
+
+    if (!isLoading && result){
+      navigation.navigate("Home")
+    }
+    else {
+      Alert.alert('An Error Occurred', `${error}`, [{text: 'okay'}])
+    }
+    } catch (err) {
+        onError(err)
+    }
+  }
 
   render() {
-    const {navigation} = this.props
+    const {navigation ,isLoading} = this.props
     return (
+      <TouchableWithoutFeedback onPress = {()=>{
+        Keyboard.dismiss()}} >
         <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -44,30 +102,73 @@ class Register extends React.Component {
                       <ScrollView>
                             <Block>
                             <FlatList
-                            data = {Placeholders.IndHolders}
-                            renderItem = {({item})=> ( <Input borderless 
+                        data = {Placeholders.IndHolders}
+                        renderItem = {({item})=>{
+                          let input
+                          if (item.name !== 'Date Of Birth'){
+                              input =  <Input borderless 
                               placeholder={item.name} 
+                              password= {item.password}
+                              onChangeText = {(input)=>this.inputIndividualHandler(input,item.name)}
                               iconContent={
-                                  <Icon
-                                    size={16}
-                                    color={argonTheme.COLORS.ICON}
-                                    name={item.icon}
-                                    family="Feather"
-                                    style={styles.inputIcons}
-                                  />
-                                }/>) }
-                                keyExtractor = {item=> item.name}
-                            />
+                                   <Icon
+                                     size={16}
+                                     color={argonTheme.COLORS.ICON}
+                                     name={item.icon}
+                                     family="Feather"
+                                     style={styles.inputIcons}
+                                   />
+                                 }/>
+                          }else {
+                             input  = <DatePicker
+                             style={{width: width - theme.SIZES.BASE * 2}}
+                             date={this.state.individualInfo["Date Of Birth"]}
+                             mode="date"
+                             placeholder={item.name}
+                             format="YYYY-MM-DD"
+                             minDate="1940-01-01"
+                             maxDate="2011-01-01"
+                             confirmBtnText="Confirm"
+                             cancelBtnText="Cancel"
+                             customStyles={{
+                               dateIcon: {
+                                 position: 'absolute',
+                                 left: 0,
+                                 top: 4,
+                                 marginLeft: 0
+                               },
+                               dateInput: {
+                                borderRadius: 4,
+                                borderColor: argonTheme.COLORS.BORDER,
+                                height: 44,
+                                backgroundColor: '#FFFFFF',
+                                
+                               }
+                               // ... You can check the source to find the other keys.
+                             }}
+                             onDateChange={(date) => this.inputIndividualHandler(date,item.name)}
+                           />
+                          }
+                          return input;
+                        } }
+                             keyExtractor = {item=> item.name}
+                        />
                           </Block>
                           <Block>
-                            <Button
-                                style={styles.button}
-                                onPress={() => navigation.navigate("Home")}
-                                textStyle={{ color: argonTheme.COLORS.BLACK }}
-                              >
-                              Register
-                            </Button>
+                          {isLoading ?
+                        <ActivityIndicator size="small" color={argonTheme.COLORS.APP_COLOUR}/>
+                        :
+                        <Button
+                            style={styles.button}
+                            onPress={this.onRegisterIndividual}
+                            textStyle={{ color: argonTheme.COLORS.BLACK }}
+                          >
+                          Register
+                        </Button>}
                           </Block>
+                          <Block>
+                          <Text></Text>
+                        </Block>
                         </ScrollView> 
                     </Block>
                   </KeyboardAvoidingView>
@@ -77,6 +178,7 @@ class Register extends React.Component {
           </Block>
         </ImageBackground>
       </Block>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -123,11 +225,26 @@ const styles = StyleSheet.create({
   button: {
     width: width - theme.SIZES.BASE * 2,
     height: theme.SIZES.BASE * 3,
-    shadowRadius: 0,
-    shadowOpacity: 0,
+    // shadowRadius: 0,
+    // shadowOpacity: 0,
     backgroundColor:"#faef23",
     marginBottom:10,
   }
 });
 
-export default Register;
+const mapStateToProps = (state)=>{
+  return {
+    isLoading : state.register.loading,
+    error: state.register.error
+  }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+return {
+  onRegister : (taxPayerData,type)=>dispatch(registerTaxPayer(taxPayerData,type)),
+  onError : (error)=> dispatch(regFail(error)),
+}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
+

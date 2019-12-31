@@ -57,8 +57,13 @@ class DrawerItem extends React.Component {
         );
       case "Getting Started":
         return <Icon />;
-      case "Log out":
-        return <Icon />;
+      case "Logout":
+        return <Icon 
+          name="logout"
+          family = "AntDesign"
+          size= {12}
+          color = {argonTheme.COLORS.ERROR}
+        />;
       default:
         return null;
     }

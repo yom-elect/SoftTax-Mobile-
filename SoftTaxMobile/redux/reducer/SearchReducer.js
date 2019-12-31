@@ -1,39 +1,37 @@
 import * as actionTypes from '../actionConstants/actionConstants'
 
 const INITIAL_STATE = {
-    isSignedIn: false,
-    token: null,
-    error: null,
+    error :null,
     loading: false,
+    userData : null,
 }
 
-const loginReducer = (state= INITIAL_STATE, action)=>{
-    switch (action.type) {
-        case actionTypes.AUTH_START:
+
+const searchReducer = (state =INITIAL_STATE, action)=>{
+    //console.log(action.error)
+    switch (action.type){
+        case actionTypes.SEARCH_START:
             return {
                 ...state,
                 error:null,
                 loading: true,
             }
-        case actionTypes.AUTH_SUCCESS:
+        case actionTypes.SEARCH_SUCCESS:
             return {
                 ...state,
-                token: action.idToken,
                 error:null,
                 loading:false,
-                isSignedIn:true,
+                userData : action.userInfo
             }
-        case actionTypes.AUTH_FAIL:
+        case actionTypes.SEARCH_FAIL:
             return {
                 ...state,
                 error:action.error,
                 loading: false,
             }
-        case actionTypes.AUTH_LOGOUT:
-            return INITIAL_STATE;
         default:
             return state
     }
 }
 
-export default loginReducer;
+export default searchReducer;

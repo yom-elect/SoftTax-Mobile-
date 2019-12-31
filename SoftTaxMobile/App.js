@@ -4,14 +4,23 @@ import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import { Block, GalioProvider } from 'galio-framework';
 import {Provider} from 'react-redux';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk'
+import {useScreens} from 'react-native-screens'
 
 import Screens from './navigation/Screens';
-import { Images, articles, argonTheme } from './constants';
+import { Images, argonTheme } from './constants';
 
 import loginReducer from './redux/reducer/LoginReducer'
+import registerReducer from './redux/reducer/RegisterReducer'
+import searchReducer from './redux/reducer/SearchReducer'
 
-const store =createStore(loginReducer)
+const rootReducer = combineReducers ({
+  auth: loginReducer,
+  register : registerReducer,
+  search : searchReducer,
+}) 
+const store =createStore(rootReducer, applyMiddleware(thunk))
 
 // cache app images
 const assetImages = [
@@ -24,8 +33,12 @@ const assetImages = [
   Images.androidLogo
 ];
 
+
+useScreens()
 // cache product images
-articles.map(article => assetImages.push(article.image));
+// articles.map(article => assetImages.push(article.image));
+
+
 
 function cacheImages(images) {
   return images.map(image => {

@@ -7,34 +7,29 @@ import RaiseAssessment from '../screens/modals/RaiseAssesment'
 // Argon themed components
 // import { argonTheme, tabs } from "../constants/";
 // import { Button, Select, Icon, Input, Header, Switch } from "../components/";
+import Header from "../components/Header";
+
 
 const { width } = Dimensions.get("screen");
 
 class Elements extends React.Component {
   state = {
-    isAssessmentMode : false,
+    taxPayer : {}
   }
 
-  assessmentHandler = ()=>{
-    this.setState({
-      isAssessmentMode: true
-    })
+  componentDidMount(){
+    const user = this.props.navigation.getParam('user')
+    this.setState({taxPayer: user})
   }
-
-  closeAssessmentHandler = ()=>{
-    this.setState({
-      isAssessmentMode: false,
-    })
-  }
-
+  
   render() {
-    const {isAssessmentMode} = this.state
+    const {navigation} = this.props
+    const {taxPayer} = this.state
     return (
       <Block flex>
-        <RaiseAssessment visible ={isAssessmentMode} close= {this.closeAssessmentHandler}/>
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 30 }}>
-          <Block flex>
-            <Text>This is single Individual or Coorporate record</Text>
+          <Block flex style= {styles.payer}>
+              <Text color= "#fff">{taxPayer.name}({taxPayer.stateRegNumber})</Text>
           </Block>
           <Block >
             <DataTable>
@@ -86,9 +81,10 @@ class Elements extends React.Component {
             </DataTable>
           </Block>
           <TouchableOpacity 
+            style= {{justifyContent:'center', alignItems:'center'}}
             activeOpacity={0.6} 
-           onPress={this.assessmentHandler}>
-              <Text>New Customer Assessment</Text>
+           onPress={()=>navigation.navigate('NewAssessment', {taxPayer})}>
+              <Text >New Customer Assessment</Text>
           </TouchableOpacity>
         </ScrollView>
       </Block>
@@ -96,8 +92,19 @@ class Elements extends React.Component {
   }
 }
 
+// Elements.navigationOptions = navData => {
+//   return  {
+//     header: <Header title="Assessment"  navigation={navData} />
+//   }
+// }
+
 const styles = StyleSheet.create({
-  
+  payer :{
+    backgroundColor: '#3B3736',
+    height : 44,
+    justifyContent:'center',
+    alignItems: 'center',
+  }
 });
 
 export default Elements;

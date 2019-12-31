@@ -3,48 +3,43 @@ import { AsyncStorage } from 'react-native'
 
 
 
-export const authStart = ()=>{
+export const regStart = ()=>{
     return {
-        type: actionTypes.AUTH_START,
+        type: actionTypes.REGISTER_START,
     }
 }
 
-export const authSuccess = (token)=>{
+export const regSuccess = (token)=>{
     return {
-        type:actionTypes.AUTH_SUCCESS,
-        idToken: token,
+        type:actionTypes.REGISTER_SUCCESS,
     }
 }
 
-export const authFail = (error)=>{
+export const regFail = (error)=>{
     return {
-        type:actionTypes.AUTH_FAIL,
+        type:actionTypes.REGISTER_FAIL,
         error: error,
     }
 }
 
-export const authLogout = () =>{
-    AsyncStorage.removeItem('token')
-    return {
-        type: actionTypes.AUTH_LOGOUT
-    }
-}
-
-export const login = (email, password)=>{
-    return async dispatch => {
+export const registerTaxPayer = (taxPayerData, type) =>{
+    return async dispatch =>{
         try{
-        dispatch(authStart())
-        const authData = {
-            Username: email,
-            Password: password
-        }
-        let url = "http://192.168.200.38/mobile/auth/Login"
-        const response = await fetch(url,{
+             dispatch(regStart())
+
+             let url = ''
+            if  (type ==='Individual'){
+                 url = "http://192.168.200.38/mobile/auth/RegisterIndividualTaxPayer"
+            }else {
+                url = "http://192.168.200.38/mobile/auth/RegisterCorporateTaxPayer" 
+            }
+            
+            const response = await fetch(url,{
              method: 'POST',
              headers: {
                  'Content-Type': 'application/json'
              },
-             body : JSON.stringify(authData)
+             body : JSON.stringify(taxPayerData)
 
         })
         if (!response.ok){
@@ -58,13 +53,12 @@ export const login = (email, password)=>{
             }
          throw new Error(message)
         }
-
+        console.log('got here')
         const resData = await response.json()
-        dispatch(authSuccess(resData.Data))
-        AsyncStorage.setItem('token' ,resData.Data)
+        dispatch(regSuccess())
         }catch (err) {
-            dispatch(authFail(err))
+            dispatch(regFail(err))
         }
-        
     }
+
 }
