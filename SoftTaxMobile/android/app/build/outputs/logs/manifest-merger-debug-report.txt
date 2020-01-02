@@ -4,6 +4,7 @@ ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\m
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:react-native-screens] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -108,84 +109,16 @@ uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:5:5-77
 	android:name
 		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:5:22-75
-uses-permission#android.permission.MANAGE_DOCUMENTS
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:8:5-75
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:8:22-72
-uses-permission#android.permission.READ_INTERNAL_STORAGE
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:9:5-80
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:9:22-77
-uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:10:5-75
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:10:22-72
-uses-permission#android.permission.USE_FINGERPRINT
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:11:5-74
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:11:22-71
-uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:12:5-66
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:12:22-63
-uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:13:5-80
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:13:22-77
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:16:5-81
-MERGED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
-MERGED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
-MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:12:5-81
-MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:12:5-81
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:16:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:17:5-79
-MERGED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
-MERGED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
-MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:14:5-79
-MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:14:5-79
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:17:22-76
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:18:5-65
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:18:22-62
-uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:19:5-72
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:19:22-69
-uses-permission#android.permission.READ_CALENDAR
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:20:5-72
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:20:22-69
-uses-permission#android.permission.WRITE_CALENDAR
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:21:5-73
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:21:22-70
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:22:5-80
-MERGED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-80
-MERGED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-80
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:22:22-77
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:23:5-71
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:23:22-68
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:24:5-81
+ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:6:5-81
 MERGED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-81
 MERGED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:24:22-78
-uses-permission#android.permission.WRITE_SETTINGS
-ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:25:5-73
-	android:name
-		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:25:22-70
+		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:6:22-78
 application
 ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:28:5-46:19
+MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-12:19
 MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-react-native-0.59.10.aar\dff7fccc00d5b898bf9a2ac3db5ddc8f\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-react-native-0.59.10.aar\dff7fccc00d5b898bf9a2ac3db5ddc8f\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\fe894fbfce7858bedf8646cc1641ea07\AndroidManifest.xml:22:5-20
@@ -258,6 +191,8 @@ uses-sdk
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-reanimated] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -422,6 +357,10 @@ INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\sr
 		INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:22-77
 uses-permission#android.permission.STORAGE
 ADDED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-66
 	android:name
@@ -444,6 +383,18 @@ ADDED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobi
 		ADDED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:17-67
 	android:name
 		ADDED from [:expo-file-system] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:17-67
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:12:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:14:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\Yomi\.gradle\caches\transforms-1\files-1.1\jetified-library-3.2.11.aar\669366e35e45f039ed9c8d18415c382b\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-76
 uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from [:expo-location] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-77
 	android:name

@@ -32,4 +32,6 @@ target 'SoftTaxApp' do
 
   use_unimodules!
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
 end

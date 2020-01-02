@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { AppLoading } from 'expo';
+//import { AppLoading } from 'expo';
+import SplashScreen from 'react-native-splash-screen'
 import { Asset } from 'expo-asset';
 import { Block, GalioProvider } from 'galio-framework';
 import {Provider} from 'react-redux';
@@ -55,16 +56,23 @@ export default class App extends React.Component {
     isLoadingComplete: false,
   }
   
+  componentDidMount(){
+    this._loadResourcesAsync
+    this._handleLoadingError
+    this._handleFinishLoading
+    SplashScreen.hide()
+  }
+
   render() {
-    if(!this.state.isLoadingComplete) {
-      return (
-        <AppLoading
-          startAsync={this._loadResourcesAsync}
-          onError={this._handleLoadingError}
-          onFinish={this._handleFinishLoading}
-        />
-      );
-    } else {
+    // if(!this.state.isLoadingComplete) {
+    //   return (
+    //     <AppLoading
+    //       startAsync={this._loadResourcesAsync}
+    //       onError={this._handleLoadingError}
+    //       onFinish={this._handleFinishLoading}
+    //     />
+    //   );
+    // } else {
       return (
         <GalioProvider theme={argonTheme}>
           <Block flex>
@@ -75,7 +83,7 @@ export default class App extends React.Component {
           </Block>
         </GalioProvider>
       );
-    }
+    
   }
 
   _loadResourcesAsync = async () => {
