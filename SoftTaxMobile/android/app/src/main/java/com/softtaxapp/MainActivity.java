@@ -25,4 +25,63 @@ public class MainActivity extends ReactActivity {
             }
         };
     }
+
+    @Override
+protected void onCreate(Bundle savedInstanceState) {
+  ...
+  super.onCreate(savedInstanceState);
+  /*INIT BLUETOOTH SERVICE*/
+  PrinterManager.mService = new BluetoothService(getApplicationContext(), mHandler);
+  ...
+}
+
+@Override
+public void onNewIntent(Intent intent) {
+  super.onNewIntent(intent);
+  setIntent(intent);
+}
+
+/*MESSAGE HANDLER BLUETOOTH STATE*/
+@SuppressLint("HandlerLeak")
+private final Handler mHandler = new Handler() {
+  @Override
+  public void handleMessage(Message msg) {
+    switch (msg.what) {
+      case BluetoothService.MESSAGE_STATE_CHANGE:
+        switch (msg.arg1) {
+          case BluetoothService.STATE_CONNECTED:
+            Toast.makeText(getApplicationContext(), Constants.connected, Toast.LENGTH_SHORT).show();
+            break;
+          case BluetoothService.STATE_CONNECTING:
+            Toast.makeText(getApplicationContext(), Constants.connecting, Toast.LENGTH_SHORT).show();
+            break;
+          case BluetoothService.STATE_LISTEN:
+          case BluetoothService.STATE_NONE:
+            break;
+        }
+        break;
+      case BluetoothService.MESSAGE_CONNECTION_LOST:
+        Toast.makeText(getApplicationContext(), Constants.disconnected, Toast.LENGTH_SHORT).show();
+        break;
+      case BluetoothService.MESSAGE_UNABLE_CONNECT:
+        Toast.makeText(getApplicationContext(), Constants.unable_to_connect, Toast.LENGTH_SHORT).show();
+        break;
+    }
+  }
+};
+
+@Override
+public void onStart() {
+  super.onStart();
+}
+
+/*Destroy*/
+@Override
+protected void onDestroy() {
+  super.onDestroy();
+  if (PrinterManager.mService != null)
+    PrinterManager.mService.stop();
+  PrinterManager.mService = null;
+}
+
 }
