@@ -4,6 +4,7 @@ ADDED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\m
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml:1:1-48:12
+MERGED from [:@react-native-community_async-storage] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\@react-native-community\async-storage\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:react-native-screens] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -191,6 +192,8 @@ uses-sdk
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\android\app\src\main\AndroidManifest.xml
+MERGED from [:@react-native-community_async-storage] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\@react-native-community\async-storage\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:@react-native-community_async-storage] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\@react-native-community\async-storage\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-splash-screen] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-splash-screen\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\Yomi\Desktop\SoftTax-Mobile-\SoftTaxMobile\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41

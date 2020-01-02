@@ -57,10 +57,16 @@ export default class App extends React.Component {
   }
   
   componentDidMount(){
-    this._loadResourcesAsync
-    this._handleLoadingError
-    this._handleFinishLoading
-    SplashScreen.hide()
+    if (!this.state.isLoadingComplete){
+        this._loadResourcesAsync
+        this._handleLoadingError
+        this._handleFinishLoading
+    }else{
+      SplashScreen.hide()
+    }
+    
+    
+    
   }
 
   render() {
@@ -83,7 +89,6 @@ export default class App extends React.Component {
           </Block>
         </GalioProvider>
       );
-    
   }
 
   _loadResourcesAsync = async () => {

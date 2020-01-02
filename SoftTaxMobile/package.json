@@ -13,6 +13,7 @@
     "url": "git+https://github.com/creativetimofficial/argon-react-native.git"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.7.1",
     "expo": "^35.0.0",
     "expo-asset": "^7.0.0",
     "expo-font": "~7.0.0",

@@ -1,5 +1,5 @@
 import * as actionTypes from '../actionConstants/actionConstants'
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage } from '@react-native-community/async-storage'
 
 
 
